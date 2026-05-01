@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const FEATURES = [
   {
     icon: "⚡",
@@ -52,136 +54,6 @@ const accentMap = {
   purple: { text: "text-purple", border: "border-purple/30", bg: "bg-purple/10", glow: "shadow-[0_0_30px_rgba(139,92,246,0.2)]" },
 };
 
-function VisorSVG() {
-  return (
-    <svg
-      viewBox="0 0 900 360"
-      className="w-full max-w-3xl mx-auto"
-      xmlns="http://www.w3.org/2000/svg"
-      role="img"
-      aria-label="Pulse auto-executor HUD visor"
-    >
-      <defs>
-        <linearGradient id="ph2-rim" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stopColor="#22e0ff" />
-          <stop offset="0.5" stopColor="#8b5cf6" />
-          <stop offset="1" stopColor="#ff2bd6" />
-        </linearGradient>
-        <linearGradient id="ph2-lensL" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="rgba(34,224,255,0.55)" />
-          <stop offset="1" stopColor="rgba(10,13,20,0.95)" />
-        </linearGradient>
-        <linearGradient id="ph2-lensR" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="rgba(255,43,214,0.55)" />
-          <stop offset="1" stopColor="rgba(10,13,20,0.95)" />
-        </linearGradient>
-        <filter id="ph2-glow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="6" result="b" />
-          <feMerge>
-            <feMergeNode in="b" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-        <clipPath id="ph2-clipL">
-          <ellipse cx="290" cy="180" rx="170" ry="95" />
-        </clipPath>
-        <clipPath id="ph2-clipR">
-          <ellipse cx="610" cy="180" rx="170" ry="95" />
-        </clipPath>
-      </defs>
-
-      {/* side temple stems */}
-      <line x1="20" y1="170" x2="120" y2="160" stroke="rgba(255,255,255,0.15)" strokeWidth="2" />
-      <line x1="780" y1="160" x2="880" y2="170" stroke="rgba(255,255,255,0.15)" strokeWidth="2" />
-
-      {/* helmet hint behind */}
-      <path
-        d="M 90 180 Q 90 60 290 60 L 610 60 Q 810 60 810 180 Q 810 300 610 300 L 290 300 Q 90 300 90 180 Z"
-        fill="rgba(15,19,28,0.6)"
-        stroke="rgba(255,255,255,0.06)"
-        strokeWidth="1"
-      />
-
-      {/* LEFT LENS */}
-      <ellipse
-        cx="290"
-        cy="180"
-        rx="170"
-        ry="95"
-        fill="url(#ph2-lensL)"
-        stroke="url(#ph2-rim)"
-        strokeWidth="2.5"
-        filter="url(#ph2-glow)"
-      />
-      <g clipPath="url(#ph2-clipL)">
-        {/* chart line inside left lens */}
-        <polyline
-          points="140,220 175,205 205,215 235,180 265,195 295,150 325,170 355,130 385,155 415,120 445,140"
-          fill="none"
-          stroke="#22e0ff"
-          strokeWidth="2.5"
-          opacity="0.85"
-        />
-        {/* ticker labels */}
-        <text x="160" y="135" fontFamily="ui-monospace, monospace" fontSize="11" fill="#22e0ff" opacity="0.85">$SCAM</text>
-        <text x="160" y="148" fontFamily="ui-monospace, monospace" fontSize="11" fill="#22e0ff" opacity="0.6">+ 973x</text>
-        <text x="370" y="245" fontFamily="ui-monospace, monospace" fontSize="10" fill="rgba(34,224,255,0.7)">SIG ▲</text>
-        {/* scan line */}
-        <line x1="120" y1="180" x2="460" y2="180" stroke="rgba(34,224,255,0.3)" strokeWidth="0.5" strokeDasharray="3 3" />
-      </g>
-
-      {/* RIGHT LENS */}
-      <ellipse
-        cx="610"
-        cy="180"
-        rx="170"
-        ry="95"
-        fill="url(#ph2-lensR)"
-        stroke="url(#ph2-rim)"
-        strokeWidth="2.5"
-        filter="url(#ph2-glow)"
-      />
-      <g clipPath="url(#ph2-clipR)">
-        {/* crosshair / target */}
-        <circle cx="610" cy="180" r="50" fill="none" stroke="#ff2bd6" strokeWidth="1.5" opacity="0.8" />
-        <circle cx="610" cy="180" r="30" fill="none" stroke="#ff2bd6" strokeWidth="1.2" opacity="0.6" />
-        <circle cx="610" cy="180" r="6" fill="#ff2bd6" opacity="0.95">
-          <animate attributeName="opacity" values="1;0.4;1" dur="1.6s" repeatCount="indefinite" />
-        </circle>
-        <line x1="540" y1="180" x2="585" y2="180" stroke="#ff2bd6" strokeWidth="1" opacity="0.6" />
-        <line x1="635" y1="180" x2="680" y2="180" stroke="#ff2bd6" strokeWidth="1" opacity="0.6" />
-        <line x1="610" y1="115" x2="610" y2="155" stroke="#ff2bd6" strokeWidth="1" opacity="0.6" />
-        <line x1="610" y1="205" x2="610" y2="245" stroke="#ff2bd6" strokeWidth="1" opacity="0.6" />
-        {/* execution labels */}
-        <text x="480" y="135" fontFamily="ui-monospace, monospace" fontSize="11" fill="#ff2bd6" opacity="0.85">EXEC</text>
-        <text x="480" y="148" fontFamily="ui-monospace, monospace" fontSize="11" fill="#ff2bd6" opacity="0.6">0.84s</text>
-        <text x="690" y="245" fontFamily="ui-monospace, monospace" fontSize="10" fill="rgba(255,43,214,0.7)">FILL ✓</text>
-      </g>
-
-      {/* BRIDGE between lenses */}
-      <rect x="455" y="170" width="10" height="20" rx="2" fill="url(#ph2-rim)" filter="url(#ph2-glow)" />
-      <rect x="435" y="172" width="20" height="16" rx="2" fill="rgba(15,19,28,0.95)" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
-      <rect x="445" y="174" width="10" height="2" rx="1" fill="rgba(34,224,255,0.6)" />
-      <rect x="445" y="184" width="10" height="2" rx="1" fill="rgba(255,43,214,0.6)" />
-
-      {/* status text above bridge */}
-      <text x="450" y="100" textAnchor="middle" fontFamily="ui-monospace, monospace" fontSize="10" fill="rgba(255,255,255,0.5)" letterSpacing="3">
-        AUTO-EXECUTOR · v2
-      </text>
-
-      {/* ear cup hints */}
-      <circle cx="120" cy="180" r="22" fill="#0f131c" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
-      <circle cx="780" cy="180" r="22" fill="#0f131c" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
-      <circle cx="120" cy="180" r="4" fill="#22e07a">
-        <animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="780" cy="180" r="4" fill="#ff2bd6">
-        <animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite" />
-      </circle>
-    </svg>
-  );
-}
-
 export default function PhaseTwo() {
   return (
     <section id="phase-2" className="relative py-24 sm:py-32 overflow-hidden">
@@ -204,9 +76,20 @@ export default function PhaseTwo() {
           </div>
         </div>
 
-        {/* VISOR */}
-        <div className="flex justify-center mb-12 px-4">
-          <VisorSVG />
+        {/* AUTO-BOT HERO IMAGE */}
+        <div className="flex justify-center mb-12 px-2">
+          <div className="relative w-full max-w-5xl rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(139,92,246,0.25)]">
+            <div className="absolute inset-0 rounded-3xl pointer-events-none ring-1 ring-inset ring-magenta/20" />
+            <Image
+              src="/auto-bot-hero.png"
+              alt="Pulse AI Auto Bot — live dashboard with HUD goggles"
+              width={1536}
+              height={996}
+              priority
+              className="w-full h-auto block"
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1280px"
+            />
+          </div>
         </div>
 
         {/* HEADLINE */}

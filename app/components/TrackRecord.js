@@ -1,23 +1,4 @@
-const TOP_WINS = [
-  { ticker: "$SCAM", peak: "973x", size: 220 },
-  { ticker: "$SLURS", peak: "30.1x", size: 130 },
-  { ticker: "$TRUMP", peak: "28.4x", size: 125 },
-  { ticker: "$IF", peak: "27.6x", size: 120 },
-  { ticker: "$AGI", peak: "26.5x", size: 118 },
-  { ticker: "$Closed", peak: "23.3x", size: 110 },
-  { ticker: "$Dunald", peak: "22.3x", size: 108 },
-  { ticker: "$THUD", peak: "22.1x", size: 105 },
-  { ticker: "$STOCKM", peak: "20.6x", size: 100 },
-  { ticker: "$TRUMPI", peak: "18.9x", size: 95 },
-  { ticker: "$CASINO", peak: "15.4x", size: 88 },
-  { ticker: "$BP", peak: "14.8x", size: 85 },
-  { ticker: "$Xing", peak: "12.2x", size: 78 },
-  { ticker: "$BASED", peak: "11.2x", size: 75 },
-  { ticker: "$parano", peak: "10.6x", size: 73 },
-  { ticker: "$ROBO", peak: "10.2x", size: 70 },
-  { ticker: "$BRETT", peak: "8.9x", size: 65 },
-  { ticker: "$AU", peak: "8.0x", size: 60 },
-];
+import WinsBubbles from "./WinsBubbles";
 
 const RECENT = [
   { result: "WIN", ticker: "$HEALTH", mcap: "$47.5K", peak: "5.19x" },
@@ -37,19 +18,6 @@ const SCOREBOARD = [
   { label: "AVG PEAK", value: "6.52x", accent: "text-magenta" },
   { label: "BEST PEAK", value: "973x", accent: "text-yellow" },
 ];
-
-function bubbleColor(i) {
-  const colors = ["green", "cyan", "magenta", "purple"];
-  return colors[i % colors.length];
-}
-
-const colorMap = {
-  green: "border-green/60 text-green shadow-[0_0_30px_rgba(34,224,122,0.4)]",
-  cyan: "border-cyan/60 text-cyan shadow-[0_0_30px_rgba(34,224,255,0.4)]",
-  magenta: "border-magenta/60 text-magenta shadow-[0_0_30px_rgba(255,43,214,0.4)]",
-  purple: "border-purple/60 text-purple shadow-[0_0_30px_rgba(139,92,246,0.4)]",
-  yellow: "border-yellow/70 text-yellow shadow-[0_0_40px_rgba(255,225,77,0.5)]",
-};
 
 export default function TrackRecord() {
   return (
@@ -84,36 +52,38 @@ export default function TrackRecord() {
           ))}
         </div>
 
+        {/* TOP 15 WINS — animated bubbles */}
         <div className="rounded-3xl border border-white/10 bg-panel/40 backdrop-blur p-6 sm:p-10 mb-10 relative overflow-hidden">
-          <div className="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-yellow/10 blur-3xl" />
-          <div className="flex items-center justify-between mb-8 relative">
+          <div className="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-yellow/10 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-32 -left-20 w-72 h-72 rounded-full bg-magenta/10 blur-3xl pointer-events-none" />
+
+          <div className="flex items-start justify-between mb-6 flex-wrap gap-3 relative">
             <div>
-              <div className="text-xs font-mono tracking-widest text-yellow mb-1">
-                ◇ TOP 25 WINS — LARGEST X PEAKS
+              <div className="text-xs font-mono tracking-widest text-yellow mb-1 flex items-center gap-2">
+                <span className="w-1 h-3 bg-yellow rounded-full" />
+                ◇ TOP 15 WINS — LARGEST X PEAKS
               </div>
-              <div className="text-white/50 text-sm">Each bubble = one called token. Bigger = bigger pump.</div>
+              <div className="text-white/50 text-sm">
+                Each bubble = one called token. Bigger = bigger pump. <span className="text-cyan">Click any bubble → open on DexScreener ↗</span>
+              </div>
             </div>
             <div className="hidden sm:block text-right text-xs font-mono text-white/50">
-              <div>BEST · <span className="text-yellow">$SCAM 973x</span></div>
-              <div>25 WINS</div>
+              <div>BEST · <span className="text-yellow font-bold">$SCAM 973x</span></div>
+              <div className="mt-0.5 flex items-center justify-end gap-1.5">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green opacity-75" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-green" />
+                </span>
+                15 WINS · LIVE
+              </div>
             </div>
           </div>
 
-          <div className="relative h-[420px] flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-            {TOP_WINS.map((w, i) => {
-              const color = i === 0 ? "yellow" : bubbleColor(i);
-              const size = w.size;
-              return (
-                <div
-                  key={w.ticker}
-                  className={`flex flex-col items-center justify-center rounded-full border bg-black/40 backdrop-blur ${colorMap[color]} font-mono`}
-                  style={{ width: size, height: size }}
-                >
-                  <div className="text-xs sm:text-sm font-bold">{w.ticker}</div>
-                  <div className="text-[10px] sm:text-xs opacity-80">{w.peak}</div>
-                </div>
-              );
-            })}
+          <WinsBubbles />
+
+          <div className="mt-4 flex items-center justify-between text-[10px] font-mono tracking-widest text-white/35 flex-wrap gap-2">
+            <span>↗ HOVER TO SLOW · CLICK TO OPEN ON DEXSCREENER</span>
+            <span>PHYSICS LIVE · ELASTIC COLLISIONS</span>
           </div>
         </div>
 
