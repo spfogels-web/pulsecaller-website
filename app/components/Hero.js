@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CABar from "./CABar";
 
 const STATS = [
   { label: "WIN RATE", value: "57%", accent: "cyan" },
@@ -23,7 +24,8 @@ export default function Hero() {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-magenta/20 blur-[120px]" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-5 sm:px-8 pt-16 sm:pt-24 pb-20 sm:pb-28">
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-8 pt-10 sm:pt-14 pb-20 sm:pb-28">
+        <CABar />
         <div className="flex justify-center mb-10">
           <div className="relative w-full max-w-3xl aspect-[2172/724]">
             <Image
