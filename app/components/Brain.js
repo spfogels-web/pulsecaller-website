@@ -299,14 +299,14 @@ export default function Brain() {
               <span className="h-px w-8 bg-magenta/40" />
             </div>
             <blockquote className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight">
-              <span className="text-white">The brain you subscribe to today </span>
-              <span className="text-gradient">is dumber than the brain you'll be using next month.</span>
+              <span className="text-white">Today's brain prints. </span>
+              <span className="text-gradient">Next month's brain dunks.</span>
             </blockquote>
             <p className="mt-6 text-white/60 leading-relaxed">
-              It learned from 295 calls. It will learn from 2,950. Every win sharpens its pattern memory. Every loss tightens its risk filters. The bot you pay for in May is a fraction of the bot you'll have in November.
+              57% off 295 calls — and it's just warmed up. Every win is XP. Every loss is another filter locked in. The bot already printing in May is a different animal by November. Send early. Send often.
             </p>
             <div className="mt-7 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-magenta/40 bg-magenta/5 text-[11px] font-mono tracking-[0.3em] text-magenta">
-              💎 LIFETIME · EVERY UPGRADE · FOREVER
+              💎 LIFETIME · LOCKED IN FOREVER
             </div>
           </div>
         </div>
