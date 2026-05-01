@@ -7,6 +7,7 @@ import DecisionEngine from "./components/DecisionEngine";
 import BotMenu from "./components/BotMenu";
 import HowItWorks from "./components/HowItWorks";
 import Pricing from "./components/Pricing";
+import PhaseTwo from "./components/PhaseTwo";
 import FAQ from "./components/FAQ";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
@@ -24,6 +25,7 @@ export default function Home() {
         <BotMenu />
         <HowItWorks />
         <Pricing />
+        <PhaseTwo />
         <FAQ />
         <CTA />
       </main>

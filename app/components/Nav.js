@@ -22,6 +22,7 @@ export default function Nav() {
           <a href="#bot" className="hover:text-cyan transition-colors">The Bot</a>
           <a href="#how" className="hover:text-cyan transition-colors">How It Works</a>
           <a href="#pricing" className="hover:text-cyan transition-colors">Pricing</a>
+          <a href="#phase-2" className="hover:text-magenta transition-colors">Phase 2</a>
           <a href="#faq" className="hover:text-cyan transition-colors">FAQ</a>
         </nav>
 
