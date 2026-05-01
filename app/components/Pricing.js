@@ -1,7 +1,7 @@
 const PLANS = [
   {
     name: "MONTHLY",
-    price: "$79",
+    price: "$84.99",
     cadence: "/ month",
     blurb: "Try the bot. Cancel anytime. New license key auto-renewed each month.",
     cta: "Start Monthly",
@@ -19,7 +19,7 @@ const PLANS = [
   },
   {
     name: "LIFETIME",
-    price: "$499",
+    price: "$799",
     cadence: "one-time",
     blurb: "Pay once. License key never expires. Best value for serious traders.",
     cta: "Get Lifetime Access",
@@ -30,7 +30,7 @@ const PLANS = [
       "Early access to new agents (Hunter v2, Critic v2)",
       "Direct line to ops for custom asks",
       "Locked-in pricing — no renewals",
-      "≈ 6 months payback at monthly rate",
+      "≈ 9 months payback at monthly rate",
     ],
     accent: "magenta",
     badge: "BEST VALUE",

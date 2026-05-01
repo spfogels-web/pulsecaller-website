@@ -29,7 +29,7 @@ const ITEMS = [
   },
   {
     q: "Why is the lifetime tier 'best value'?",
-    a: "Pays for itself in roughly 6 months at the monthly rate. After that it's free forever — including every new feature we ship. Locked-in pricing, no renewals, no gotchas.",
+    a: "Pays for itself in roughly 9 months at the monthly rate. After that it's free forever — including every new feature we ship. Locked-in pricing, no renewals, no gotchas.",
   },
   {
     q: "Is this financial advice?",
