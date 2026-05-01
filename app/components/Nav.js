@@ -19,6 +19,7 @@ export default function Nav() {
           <a href="#track-record" className="hover:text-cyan transition-colors">Track Record</a>
           <a href="#features" className="hover:text-cyan transition-colors">Features</a>
           <a href="#engine" className="hover:text-cyan transition-colors">Engine</a>
+          <a href="#brain" className="hover:text-cyan transition-colors">Brain</a>
           <a href="#bot" className="hover:text-cyan transition-colors">The Bot</a>
           <a href="#how" className="hover:text-cyan transition-colors">How It Works</a>
           <a href="#pricing" className="hover:text-cyan transition-colors">Pricing</a>
