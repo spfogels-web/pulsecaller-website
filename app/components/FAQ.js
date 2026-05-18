@@ -5,7 +5,7 @@ import { useState } from "react";
 const ITEMS = [
   {
     q: "What's the actual win rate?",
-    a: "57% lifetime across 278 calls (159 wins / 119 losses). Average peak across all wins: 6.52x. Best single call: $SCAM at 973x. We post every call live — wins AND losses — so you can verify the math yourself.",
+    a: "57% all-time across 278 calls (159 wins / 119 losses). Average peak across all wins: 6.52x. Best single call: $SCAM at 973x. We post every call live — wins AND losses — so you can verify the math yourself.",
   },
   {
     q: "What chain does this work on?",
@@ -28,8 +28,8 @@ const ITEMS = [
     a: "Yes, anytime. Your license stays active until the end of the paid period, then the bot kicks the key automatically.",
   },
   {
-    q: "Why is the lifetime tier 'best value'?",
-    a: "Pays for itself in roughly 9 months at the monthly rate. After that it's free forever — including every new feature we ship. Locked-in pricing, no renewals, no gotchas.",
+    q: "Why is the yearly tier 'best value'?",
+    a: "Roughly 2 months free vs paying month-to-month. Locked-in pricing for 12 months — no mid-year hikes — plus every feature drop we ship in that window. Best fit if you know you're in for the long haul.",
   },
   {
     q: "Is this financial advice?",

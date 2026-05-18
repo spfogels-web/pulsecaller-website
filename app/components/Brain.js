@@ -306,7 +306,7 @@ export default function Brain() {
               57% off 295 calls — and it's just warmed up. Every win is XP. Every loss is another filter locked in. The bot already printing in May is a different animal by November. Send early. Send often.
             </p>
             <div className="mt-7 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-magenta/40 bg-magenta/5 text-[11px] font-mono tracking-[0.3em] text-magenta">
-              💎 LIFETIME · LOCKED IN FOREVER
+              💎 LOCK IN A YEAR · 2 MONTHS FREE
             </div>
           </div>
         </div>

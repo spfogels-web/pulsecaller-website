@@ -2,7 +2,7 @@ const STEPS = [
   {
     n: "01",
     title: "Grab a license",
-    body: "Pick monthly or lifetime. Pay with card or crypto. You get a license key on the spot — no waiting, no DMs to chase.",
+    body: "Pick monthly or yearly. Pay with card or crypto. You get a license key on the spot — no waiting, no DMs to chase.",
     accent: "cyan",
   },
   {

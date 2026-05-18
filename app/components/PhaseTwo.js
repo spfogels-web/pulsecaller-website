@@ -168,13 +168,13 @@ export default function PhaseTwo() {
             <div className="lg:col-span-2">
               <div className="text-[10px] font-mono tracking-[0.3em] text-magenta mb-3 flex items-center gap-2">
                 <span className="w-1 h-3 bg-magenta rounded-full" />
-                ⚡ EARLY ACCESS · LIFETIME HOLDERS GET IT FREE
+                ⚡ EARLY ACCESS · YEARLY HOLDERS GET IT FREE
               </div>
               <h3 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-3">
                 Reserve your spot at the <span className="text-gradient">front of the queue</span>.
               </h3>
               <p className="text-white/60 leading-relaxed">
-                Auto-executor goes live to <span className="text-magenta font-semibold">Lifetime members first</span>. Monthly subscribers next. Public last. Get on the waitlist now to lock your slot — or grab a Lifetime license to skip the line entirely.
+                Auto-executor goes live to <span className="text-magenta font-semibold">Yearly members first</span>. Monthly subscribers next. Public last. Get on the waitlist now to lock your slot — or grab a Yearly license to skip the line entirely.
               </p>
             </div>
 
@@ -191,7 +191,7 @@ export default function PhaseTwo() {
                 href="#pricing"
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full text-sm font-semibold tracking-wider text-white border border-white/15 hover:border-magenta hover:text-magenta transition-colors"
               >
-                Skip the line · Go Lifetime
+                Skip the line · Go Yearly
               </a>
             </div>
           </div>

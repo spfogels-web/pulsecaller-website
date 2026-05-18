@@ -1,12 +1,6 @@
 import Image from "next/image";
 import CABar from "./CABar";
-
-const STATS = [
-  { label: "WIN RATE", value: "57%", accent: "cyan" },
-  { label: "BEST CALL", value: "973x", accent: "magenta" },
-  { label: "WALLETS TRACKED", value: "6,288", accent: "purple" },
-  { label: "AVG PEAK", value: "6.52x", accent: "green" },
-];
+import { getStats } from "../lib/stats";
 
 const accentMap = {
   cyan: "text-cyan glow-text-cyan",
@@ -15,7 +9,30 @@ const accentMap = {
   green: "text-green",
 };
 
-export default function Hero() {
+const DASH = "—";
+
+function fmtPercent(v) {
+  return v == null ? DASH : `${Math.round(v * 100)}%`;
+}
+function fmtMultInt(v) {
+  return v == null ? DASH : `${Math.round(v).toLocaleString("en-US")}x`;
+}
+function fmtMult2(v) {
+  return v == null ? DASH : `${v.toFixed(2)}x`;
+}
+function fmtInt(v) {
+  return v == null ? DASH : v.toLocaleString("en-US");
+}
+
+export default async function Hero() {
+  const stats = await getStats();
+  const cards = [
+    { label: "WIN RATE", value: fmtPercent(stats.winRate), accent: "cyan" },
+    { label: "BEST CALL", value: fmtMultInt(stats.bestCall), accent: "magenta" },
+    { label: "WALLETS TRACKED", value: fmtInt(stats.walletsTracked), accent: "purple" },
+    { label: "AVG PEAK", value: fmtMult2(stats.avgPeak), accent: "green" },
+  ];
+
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-40 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
@@ -84,11 +101,11 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {STATS.map((s) => (
+        <div className="mt-16 flex flex-wrap justify-center gap-4">
+          {cards.map((s) => (
             <div
               key={s.label}
-              className="relative rounded-2xl border border-white/10 bg-panel/80 backdrop-blur p-5 hover:border-white/20 transition-colors"
+              className="relative rounded-2xl border border-white/10 bg-panel/80 backdrop-blur p-5 hover:border-white/20 transition-colors basis-[calc(50%-0.5rem)] md:basis-[calc(33.333%-0.667rem)]"
             >
               <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
               <div className="text-[10px] font-mono tracking-[0.2em] text-white/50">
@@ -99,6 +116,19 @@ export default function Hero() {
               </div>
             </div>
           ))}
+          <div className="relative rounded-2xl border border-white/10 bg-panel/80 backdrop-blur p-5 hover:border-white/20 transition-colors basis-[calc(50%-0.5rem)] md:basis-[calc(33.333%-0.667rem)]">
+            <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+            <div className="text-[10px] font-mono tracking-[0.2em] text-white/50">
+              WINS / LOSSES
+            </div>
+            <div className="mt-2 text-3xl sm:text-4xl font-bold">
+              <span className="text-green">{fmtInt(stats.wins)}</span>
+              <span className="text-white/30">W</span>
+              <span className="text-white/40"> / </span>
+              <span className="text-red">{fmtInt(stats.losses)}</span>
+              <span className="text-white/30">L</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
