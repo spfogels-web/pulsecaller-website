@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import LiveTicker from "./components/LiveTicker";
@@ -6,6 +8,7 @@ import Features from "./components/Features";
 import DecisionEngine from "./components/DecisionEngine";
 import Brain from "./components/Brain";
 import BotMenu from "./components/BotMenu";
+import BotHours from "./components/BotHours";
 import HowItWorks from "./components/HowItWorks";
 import Pricing from "./components/Pricing";
 import PhaseTwo from "./components/PhaseTwo";
@@ -25,6 +28,7 @@ export default function Home() {
         <DecisionEngine />
         <Brain />
         <BotMenu />
+        <BotHours />
         <HowItWorks />
         <Pricing />
         <PhaseTwo />
